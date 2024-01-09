@@ -19,15 +19,15 @@ do{
     enonce=litChaine("Veuillez saisir l'énoncé de la question : ");
 
     if(type=="o"){
-        const q1=new QuestionOuverte(compteurquestions);
-        q1.setType(TypeQuestion.Ouverte);
-        q1.setEnonce(enonce);
-        questionsOuvertes.push(q1);
+        const q=new QuestionOuverte(compteurquestions);
+        q.setType(TypeQuestion.Ouverte);
+        q.setEnonce(enonce);
+        questionsOuvertes.push(q);
     }
     else{
-        const q1=new QuestionFermee(compteurquestions);
-        q1.setType(TypeQuestion.Fermée);
-        q1.setEnonce(enonce);
+        const q=new QuestionFermee(compteurquestions);
+        q.setType(TypeQuestion.Fermée);
+        q.setEnonce(enonce);
         console.log("Combien de propositions voulez-vous saisir ?");
         let nb:number;
         do{
@@ -37,7 +37,7 @@ do{
             let ch:string;
             ch=litChaine("Veuillez saisir la proposition "+(i+1)+" : ");
             const p=new Proposition(i+1, ch);
-            q1.addpropositions(p);
+            q.addpropositions(p);
             do{
                 ch=litChaine("Voulez-vous une précision pour cette proposition ? (o/n) : ");
             } while (ch!="o" && ch!="n");
@@ -49,7 +49,7 @@ do{
             }
 
         }
-        questionsFermées.push(q1);
+        questionsFermées.push(q);
     }
     compteurquestions++;
 }while (litChaine("Voulez-vous saisir une autre question ? (o/n): ")!="n");

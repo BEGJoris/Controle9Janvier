@@ -4,19 +4,19 @@ import { Proposition } from "./Proposition.ts";
 
 export class QuestionFermee extends Question {
     private propositions: Proposition[]=[];
-    constructor(id: number = 0, enonce: string = "") {
+    public constructor(id: number = 0, enonce: string = "") {
         super(id, TypeQuestion.Fermée, enonce);
     }
-    addpropositions(proposition:Proposition){
+    public addpropositions(proposition:Proposition){
         this.propositions.push(proposition);
     }
-    getpropositions(){
+    public getpropositions(){
         return this.propositions;
     }
-    toString(): string {
+    public toString(): string {
         return super.toString()+" (fermée)"
     }
-    toStringTraduit(): string {
+    public toStringTraduit(): string {
         return super.toStringTraduit()+" (fermée)"
     }
 }

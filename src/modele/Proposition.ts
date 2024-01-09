@@ -3,32 +3,30 @@ export class Proposition{
     private id: number
     private texte: string
     private precision:boolean;
-    constructor(id: number = 0, texte: string = "",precision=false) {
+    public constructor(id: number = 0, texte: string = "",precision=false) {
         this.id = id
         this.texte = texte
         this.precision=precision
     }
-
-    // Getters et setters
-    getId(): number {
+    public getId(): number {
         return this.id;
     }
-    setId(id: number) {
+    public setId(id: number) {
         this.id = id;
     }
-    getTexte(): string {
+    public getTexte(): string {
         return this.texte;
     }
-    setTexte(texte: string) {
+    public setTexte(texte: string) {
         this.texte = texte;
     }
-    getPrecision(): boolean {
+    public getPrecision(): boolean {
         return this.precision;
     }
-    setPrecision(precision: boolean) {
+    public setPrecision(precision: boolean) {
         this.precision = precision;
     }
-    toString(){
+    public toString(){
         if(this.precision){
             return "Proposition "+this.texte+" (avec précision)";
         }
@@ -36,7 +34,7 @@ export class Proposition{
             return "Proposition "+this.texte
         }
     }
-    toStringTraduit(){
+    public toStringTraduit(){
         if(this.precision){
             return "Proposition "+reverse(this.texte)+" (avec précision)"
         }
